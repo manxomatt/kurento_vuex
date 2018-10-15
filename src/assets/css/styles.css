@@ -1,0 +1,139 @@
+@tailwind preflight;
+/**
+ * Form Switch
+ */
+.form-switch {
+    @apply relative select-none w-12 mr-2 leading-normal inline-block align-middle;
+}
+.form-switch-checkbox {
+    @apply hidden;
+}
+.form-switch-label {
+    @apply block overflow-hidden cursor-pointer bg-white border rounded-full h-6  shadow-inner;
+    transition: background-color 0.2s ease-in;
+}
+.form-switch-label:before {
+    @apply absolute block bg-white pin-y w-6 border rounded-full -ml-1;    
+    right: 50%;
+    content: "";
+    transition: all 0.2s ease-in;
+}
+.form-switch-checkbox:checked + .form-switch-label,
+.form-switch-checkbox:checked + .form-switch-label:before {
+
+}
+.form-switch-checkbox:checked + .form-switch-label {
+    @apply bg-green shadow-none;
+}
+.form-switch-checkbox:checked + .form-switch-label:before {
+    @apply pin-r;
+}
+/**
+ * Input Field
+ */
+.form-label {
+  @apply block text-grey-darker text-sm font-bold mb-2;
+}
+.form-input {
+  @apply shadow appearance-none border outline-none rounded w-full py-2 px-3 text-grey-darker;
+}
+.form-input-error {
+  @apply border-red;
+}
+
+/**
+ * Link
+ */
+.link {
+  @apply border-b font-bold no-underline appearance-none text-blue-light border-transparent border-solid;
+}
+.link:hover {
+  @apply border-blue-light;
+}
+
+@tailwind components;
+/**
+ * Menu Navigation
+ */
+.font-sans {    
+    font-family: 'Open Sans', sans-serif;
+}
+.c-dropdown:hover .c-dropdown-menu {
+    display: block !important;
+}
+.c-dropdown-menu {
+    display: none;
+}
+/**
+ * Form Checkbox 
+ */
+.form-checkbox + .form-checkbox-label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+  user-select: none;
+}
+
+.form-checkbox {
+  display: none;
+}
+
+.form-checkbox + .form-checkbox-label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+.form-checkbox + .form-checkbox-label:active:before {
+  transform: scale(0);
+}
+
+.form-checkbox:checked + .form-checkbox-label:before {
+  background-color: MediumSeaGreen;
+  border-color: MediumSeaGreen;
+  color: #fff;
+}
+
+.form-checkbox:disabled + .form-checkbox-label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+.form-checkbox:checked:disabled + .form-checkbox-label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+
+/**
+ * Loading Spinner
+ */
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: relative;  
+  width: 30px;
+  height: 30px;  
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  border-top-color: #07d;
+  animation: spinner .6s linear infinite;
+  display: inline-block;
+}
+
+@tailwind utilities;

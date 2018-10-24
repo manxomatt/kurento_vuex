@@ -1,21 +1,22 @@
-import * as kurentoCall from './kurentoCall';
+/* eslint-disable */
+import * as kurentoCall from './kurentoCall'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-	state: {
-		user:"",
-		peer:""
-	},
-	getters: {
-		/*
-		getCounter: state => {
-			return state.count
-		}
-		*/
-	},
+  state: {
+    user: '',
+    peer: ''
+  },
+  getters: {
+    /*
+     getCounter: state => {
+     return state.count
+   }
+   */
+  },
 	mutations: {
 		/*
 		increment (state) {
@@ -30,7 +31,7 @@ export default new Vuex.Store({
 	},
 	
 	actions: {
-		register(store,{user}){
+		register (store,{user}){
 			kurentoCall.register(user);  
 		},
 		call(store,{user,peer}){

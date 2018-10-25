@@ -148,12 +148,12 @@ let incomingCall = (message) => {
       mediaConstraints: constraints
     }
 
-    webRtcPeer = kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options, (error) => {
+    webRtcPeer = kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options, function (error) {
       if (error) {
         setCallState(NO_CALL)
       }
 
-      this.generateOffer((error, offerSdp) => {
+      this.generateOffer(function (error, offerSdp) {
         if (error) {
           setCallState(NO_CALL)
         }
@@ -207,13 +207,13 @@ export const call = (mFrom, mTo) => {
     onicecandidate: onIceCandidate
   }
 
-  webRtcPeer = kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options, (error) => {
+  webRtcPeer = kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options, function (error) {
     if (error) {
       // console.error(error)
       setCallState(NO_CALL)
     }
 
-    this.generateOffer((error, offerSdp) => {
+    this.generateOffer(function (error, offerSdp) {
       if (error) {
         // console.error(error);
         setCallState(NO_CALL)

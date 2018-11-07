@@ -1,3 +1,7 @@
+<style>
+@import 'assets/css/main.css';
+@import 'assets/css/room.css';
+</style>
 <template>
   <div id="app">
     <router-view/>
@@ -11,6 +15,7 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

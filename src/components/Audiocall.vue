@@ -1,10 +1,18 @@
 /* eslint-disable */
 
 <template>
-  <div id="app">
-    <label class="form-label">User Name</label>
-    <input class="input-text" v-model='userName' type="text">
-    <button @click.prevent='register'>Register</button>
+   <div id="app">
+     <div class="input">
+       <label class="form-label">User Name</label>
+         <input class="input-text" v-model='userName' type="text">
+       </div>
+    <div>
+      <label class="form-label">Room Name</label>
+      <input class="input-text" v-model='roomName' type="text">
+    </div>
+    <div>
+      <button @click.prevent='register'>Register</button>
+    </div>
     <label>Peer Name</label>
     <input class="form-input"  v-model='peerName' type="text">
     <button class="btn btn-primary" @click.prevent='call'>Call</button>
@@ -17,10 +25,7 @@
     <audio id="audioInput" autoplay controls muted></audio>
     <!-- <video id="videoInput" autoplay width="240px" height="180px" poster="img/webrtc.png"></video> -->
     </div>
-    <!-- div class="counter"> {{ counter }} </div>
-    <button @click="increment" class="increment"> Tambah </button>
-    <button @click="decrement" class="decrement"> Kurangi </button -->
-
+    	
   </div>
 </template>
 
@@ -42,7 +47,7 @@ export default {
       this.$store.commit('decrement')
     },
     register () {
-      this.$store.dispatch('register', {user: this.userName})
+      this.$store.dispatch('register', {user: this.userName, room: this.roomName})
     },
     call () {
       this.$store.dispatch('call', { user: this.userName, peer: this.peerName })
